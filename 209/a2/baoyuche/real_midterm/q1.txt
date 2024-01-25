@@ -1,0 +1,34 @@
+MIDTERM TEST QUESTION 1
+Shell Usage
+
+4 marks
+
+We've provided a file in your midterm starter code called stats.txt.
+It contains fake stats about athletes. We care only about the fifth column,
+which is the number of games played for each athlete.
+
+We want to sort the athletes by number of games played, from least to most,
+and to place these sorted results in a file called sorted.txt.
+
+Look at the man page for the sort program.
+
+(A) 1 mark
+Which option listed under Ordering options is the most appropriate
+for helping you sort the fifth column? Briefly explain why this option is useful.
+
+TODO short answer
+The option -g might be useful as it compares according to numerical values.The fifth column contains only numerical values.
+
+(B) 1 mark
+Which option under Other options will help you actually focus on the fifth column?
+
+TODO short answer
+The option -k, or --key=KEYDEF, let sort to focus on a given location, in this case the fifth column.
+
+(C) 2 marks
+Now put it all together.
+Write a shell command that sorts the athletes by number of games played,
+from least to most, and places these sorted results in a file called sorted.txt.
+
+TODO shell command
+sort --k=5 -n stats.txt > sorted.txt

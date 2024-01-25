@@ -1,0 +1,76 @@
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- CSC 343H5S: Lab 4
+-- Winter 2022 | University of Toronto Mississauga
+-- SKELETON FILE FOR TRIGGER/FUNCTION
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-- ***** DO NOT CHANGE THE FORMAT *****
+-- ***** YOU MAY ONLY ADD WHERE *****
+-- *****  IT INDICATES TO DO SO *****
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- PREAMBLE
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Parter 1's Name: [Yuchen Bao]
+-- Partner 1's Student Number: [1004956880]
+-- Partner 1's UtorID: [baoyuche]
+
+-- Parter 2's Name: [Wen Hua Tung]
+-- Partner 2's Student Number: [1004767040]
+-- Partner 2's UtorID: [tungwen]
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- DDL Additions
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DROP TABLE IF EXISTS Earnings;
+DROP TRIGGER IF EXISTS insert_passenger_fare_trigger ON Take;
+DROP FUNCTION IF EXISTS insert_passenger_fare;
+CREATE TABLE IF NOT EXISTS Earnings(
+    Type varchar(20) NOT NULL, 
+    TotalEarnings decimal(10,2)
+);
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- BEGIN
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-- ++++++++++++++++++++
+--  Function
+-- ++++++++++++++++++++
+
+CREATE OR REPLACE FUNCTION insert_passenger_fare()
+	RETURNS TRIGGER AS $insert_passenger_fare_trigger$
+	
+	DECLARE type1 VARCHAR(20);
+	DECLARE type0 VARCHAR(20);
+	DECLARE fee numeric(10, 2);
+	BEGIN
+	select fare.type, fare.fee into type1, fee from (select type from passenger where NEW.sin = passenger.sin) a natural join fare;
+	IF FOUND THEN
+		select Earnings.type into type0 from Earnings where type1 = Earnings.type;		
+		IF FOUND THEN
+			-- update on current type
+			UPDATE Earnings SET totalearnings = totalearnings + fee where type = type1;	
+		ELSE
+			-- create a new type
+			INSERT INTO Earnings VALUES(type1, fee);
+		END IF;
+	ELSE
+		raise notice 'person does not exist';
+	END IF;
+	RETURN NEW;
+	END;
+	$insert_passenger_fare_trigger$ LANGUAGE plpgsql;
+
+-- ++++++++++++++++++++
+--  Trigger
+-- ++++++++++++++++++++
+
+CREATE TRIGGER insert_passenger_fare_trigger
+BEFORE INSERT ON Take
+FOR EACH ROW
+EXECUTE PROCEDURE insert_passenger_fare();
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- END
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

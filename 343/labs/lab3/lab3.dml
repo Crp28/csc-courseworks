@@ -1,0 +1,137 @@
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- CSC 343H5S: Lab 3
+-- Winter 2022 | University of Toronto Mississauga
+-- SKELETON FILE FOR SQL
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-- ***** DO NOT CHANGE THE FORMAT *****
+-- ***** YOU MAY ONLY ADD WHERE *****
+-- *****  IT INDICATES TO DO SO *****
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- PREAMBLE
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Parter 1's Name: [Yuchen Bao]
+-- Partner 1's Student Number: [1004956880]
+-- Partner 1's UtorID: [baoyuche]
+
+-- Parter 2's Name: [insert name]
+-- Partner 2's Student Number: [insert student number]
+-- Partner 2's UtorID: [insert University of Toronto Identifier]
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- BEGIN
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-- ++++++++++++++++++++
+--  Q1
+-- ++++++++++++++++++++
+
+SELECT COUNT(DateOfBirth) AS totalSeniors FROM person WHERE DateOfBirth + interval '65 years' <= DATE('2019-11-14 00:00:00');
+
+-- ++++++++++++++++++++
+--  Q2
+-- ++++++++++++++++++++
+
+SELECT COUNT(taken) FROM (passenger NATURAL JOIN take NATURAL JOIN ship NATURAL JOIN route) AS taken WHERE type = 'ST' AND routeid = 1 AND date = DATE('2019-09-04');
+
+-- ++++++++++++++++++++
+--  Q3.A
+-- ++++++++++++++++++++
+
+SELECT shipid, age, manufacturer FROM Ship WHERE advertisingrevenue > 10000;
+
+-- ++++++++++++++++++++
+--  Q3.B
+-- ++++++++++++++++++++
+
+SELECT firstname, lastname, yearsofservice, shipid FROM (SELECT shipid FROM (SELECT advertisingrevenue FROM Ship WHERE advertisingrevenue > 10000 ORDER BY ADVERTISINGREVENUE
+desc LIMIT 1) profit, ship WHERE ship.advertisingrevenue = profit.advertisingrevenue) s NATURAL JOIN Operate NATURAL JOIN Pilot NATURAL JOIN Person;
+
+-- ++++++++++++++++++++
+--  Q3.C
+-- ++++++++++++++++++++
+
+select routeid, SUM(advertisingrevenue) as "Total Revenue" from route NATURAL JOIN ship GROUP BY routeid ORDER BY "Total Revenue" desc;
+
+-- ++++++++++++++++++++
+--  Q4.A
+-- ++++++++++++++++++++
+
+select type, count*fee as revenue from (select type, count(type) from passenger group by type) t natural join fare;
+
+-- ++++++++++++++++++++
+--  Q4.B
+-- ++++++++++++++++++++
+
+select type, count*fee as revenue from (select type, count(type) from passenger group by type) t natural join fare where count*fee > 500;
+
+-- ++++++++++++++++++++
+--  Q4.C
+-- ++++++++++++++++++++
+
+select type, count*fee as revenue from (select type, count(type) from passenger natural join take where date = DATE('2019-09-01') group by type) t natural join fare order by revenue desc limit 1;
+
+-- ++++++++++++++++++++
+--  Q5.A
+-- ++++++++++++++++++++
+
+select sin, firstname, lastname, extract(year from CURRENT_DATE) - extract(year from dateofbirth) as Age from (select pilot.sin from (select sin, count(sin) as violation from infraction group by sin) t full join pilot on t.sin = pilot.sin WHERE violation < 3 or violation is null) t1 natural join person;
+
+-- ++++++++++++++++++++
+--  Q5.B
+-- ++++++++++++++++++++
+
+select sin, sum(demerit) as demerit, sum(fine) as totalFine from infraction where demerit >= 2 group by sin order by demerit desc, totalfine desc;
+
+-- ++++++++++++++++++++
+--  Q6.A
+-- ++++++++++++++++++++
+
+select shipid, manufacturer from (select manufacturer, count(shipid) from ship group by manufacturer) t natural join ship where t.count = 1;
+
+-- ++++++++++++++++++++
+--  Q6.B
+-- ++++++++++++++++++++
+
+select routeid, count(sin) as "number of times" from take natural join ship natural join route group by routeid order by "number of times" desc limit 1;
+
+-- ++++++++++++++++++++
+--  Q6.C
+-- ++++++++++++++++++++
+
+select date, count(sin) as "trips taken" from take group by date order by "trips taken" desc limit 1;
+
+-- ++++++++++++++++++++
+--  Q7.A
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q7.B
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q8
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q9
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q10
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- END
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

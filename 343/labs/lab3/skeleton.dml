@@ -1,0 +1,136 @@
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- CSC 343H5S: Lab 3
+-- Winter 2022 | University of Toronto Mississauga
+-- SKELETON FILE FOR SQL
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-- ***** DO NOT CHANGE THE FORMAT *****
+-- ***** YOU MAY ONLY ADD WHERE *****
+-- *****  IT INDICATES TO DO SO *****
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- PREAMBLE
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Parter 1's Name: [insert name]
+-- Partner 1's Student Number: [insert student number]
+-- Partner 1's UtorID: [insert University of Toronto Identifier]
+
+-- Parter 2's Name: [insert name]
+-- Partner 2's Student Number: [insert student number]
+-- Partner 2's UtorID: [insert University of Toronto Identifier]
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- BEGIN
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-- ++++++++++++++++++++
+--  Q1
+-- ++++++++++++++++++++
+
+--  SELECT COUNT(DateOfBirth) FROM person WHERE DateOfBirth + interval '65 years' < DATE('2019-11-14 00:00:00');
+
+-- ++++++++++++++++++++
+--  Q2
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q3.A
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q3.B
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q3.C
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q4.A
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q4.B
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q4.C
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q5.A
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q5.B
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q6.A
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q6.B
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q6.C
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q7.A
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q7.B
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q8
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q9
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- ++++++++++++++++++++
+--  Q10
+-- ++++++++++++++++++++
+
+-- Your code goes here (delete this line, add your query here)
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- END
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

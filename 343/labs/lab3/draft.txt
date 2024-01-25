@@ -1,0 +1,56 @@
+2. SELECT COUNT(taken) FROM (passenger NATURAL JOIN take NATURAL JOIN ship NATURAL JOIN route) AS taken WHERE type = 'ST' AND routeid = 1 AND date = DATE('2019-09-04');
+
+
+
+
+passenger
+take
+route
+ship
+
+
+passenger.sin = take.sin
+take.shipid = ship.shipid
+ship.routeid = route.routeid
+
+
+
+3. SELECT shipid, age, manufacturer FROM Ship WHERE advertisingrevenue > 10000;
+
+SELECT firstname, lastname, yearsofservice, shipid FROM (SELECT shipid FROM (SELECT advertisingrevenue FROM Ship WHERE advertisingrevenue > 10000 ORDER BY ADVERTISINGREVENUE
+desc LIMIT 1) profit, ship WHERE ship.advertisingrevenue = profit.advertisingrevenue) s NATURAL JOIN Operate NATURAL JOIN Pilot NATURAL JOIN Person;
+
+
+4.
+select type, count*fee as revenue from (select type, count(type) from passenger group by type) t natural
+join fare;
+
+5.
+select sin, firstname, lastname, extract(year from CURRENT_DATE) - extract(year from dateofbirth) as Age from (select pilot.sin from (select sin, count(sin) as violation from infraction group by sin) t full join pilot on t.sin = pilot.sin WHERE violation < 3 or violation is null) t1 natural join person;
+
+
+
+
+
+
+
+
+
+7.
+from (select siname, phonenumber, routeid FROM (select * from sites where category = 'Library') l natural join go) t;
+
+select siname, phonenumber, routeid, shipid FROM (select * from sites where category = 'Library') l natural join go natural join (select * from ship natural join take where) t1;
+
+
+
+
+select routeid, sin, siname, phonenumber, date  from take natural join ship natural join (select siname,
+phonenumber, routeid FROM (select * from sites where category = 'Library') l natural join go) t where date = '2019-09-05
+' or date = '2019-09-06';
+
+select occupation from (select take.sin FROM ((select * from sites where category = 'Library') l natural join go join (select * from ship natural join take where date = '2019-09-06' or date = '2019-09-05') t1 on t1.routeid = go.routeid) t2 join take on take.shipid = t2.shipid group by take.sin) p natural join person;
+
+
+
+
+

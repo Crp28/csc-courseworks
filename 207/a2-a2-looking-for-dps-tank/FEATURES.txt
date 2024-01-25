@@ -1,0 +1,64 @@
+=====
+ADD INSTRUCTIONS FOR HOW TO RUN/USE YOUR PROGRAM HERE:
+e.g. What format should we use to input data or add data to events.txt? Anything else we need to know in order to use your program?
+=====
+
+
+
+
+
+
+
+
+
+=====
+LIST ALL FEATURES THAT YOU WORKED ON HERE, AND HOW TO INPUT RELEVANT DATA FOR THE FEATURE (IF APPLICABLE)
+=====
+
+FEATURE 1
+
+Description: Tapping a card at a station
+
+Usage Instructions: (Describe how to input relevant data to signify a tap, and what output will show up if the tap worked, etc. Anything that is relevant to the client using your program, WITHOUT going into any details about the actual code)
+
+Design Decisions: (Describe any decisions you made in the organization of code relevant to this feature. If any OOP principles, SOLID principles or design patterns were used, clearly highlight this here).
+
+
+FEATURE 2
+
+Description:
+
+Usage Instructions:
+
+Design Decisions:
+
+
+FEATURE 3
+
+Description:
+
+Usage Instructions:
+
+Design Decisions:
+
+
+
+
+...
+
+
+
+
+======
+
+Note: If you have design decisions that don't fit under a specific feature, but are instead relevant to multiple features, feel free to include them at the bottom of this file here.
+
+OTHER NOTES
+
+
+
+
+
+
+
+
