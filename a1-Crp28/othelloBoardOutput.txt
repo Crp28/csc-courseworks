@@ -1,0 +1,237 @@
+  0 1 2 3 4 5 6 7 
+ +-+-+-+-+-+-+-+-+
+0| | | | | | | | |0
+ +-+-+-+-+-+-+-+-+
+1| | | | | | | | |1
+ +-+-+-+-+-+-+-+-+
+2| | | | | | | | |2
+ +-+-+-+-+-+-+-+-+
+3| | | |X|O| | | |3
+ +-+-+-+-+-+-+-+-+
+4| | | |O|X| | | |4
+ +-+-+-+-+-+-+-+-+
+5| | | | | | | | |5
+ +-+-+-+-+-+-+-+-+
+6| | | | | | | | |6
+ +-+-+-+-+-+-+-+-+
+7| | | | | | | | |7
+ +-+-+-+-+-+-+-+-+
+  0 1 2 3 4 5 6 7 
+
+getCount(P1)=2
+getCount(P2)=2
+  0 1 2 3 4 5 6 7 
+ +-+-+-+-+-+-+-+-+
+0|X|X|X|X|X|X|X|X|0
+ +-+-+-+-+-+-+-+-+
+1|X|X|X|X|X|X|X|X|1
+ +-+-+-+-+-+-+-+-+
+2|X|X|X|X|X|X|X|X|2
+ +-+-+-+-+-+-+-+-+
+3|X|X|X|X|X|X|X|X|3
+ +-+-+-+-+-+-+-+-+
+4|X|X|X|X|X|X|X|X|4
+ +-+-+-+-+-+-+-+-+
+5|X|X|X|X|X|X|X|X|5
+ +-+-+-+-+-+-+-+-+
+6|X|X|X|X|X|X|X|X|6
+ +-+-+-+-+-+-+-+-+
+7|X|X|X|X|X|X|X|X|7
+ +-+-+-+-+-+-+-+-+
+  0 1 2 3 4 5 6 7 
+
+getCount(P1)=64
+getCount(P2)=0
+checkForPattern= 
+checkForPattern= 
+checkForPattern= 
+checkForPattern= 
+checkForPattern= 
+checkForPattern= 
+checkForPattern= 
+checkForPattern= 
+checkForPattern= 
+  0 1 2 3 4 5 6 7 
+ +-+-+-+-+-+-+-+-+
+0|O|O|O|O|O|O|O|O|0
+ +-+-+-+-+-+-+-+-+
+1|O|X|X|X|X|X|X|X|1
+ +-+-+-+-+-+-+-+-+
+2|O|X|X|X|X|X|X|X|2
+ +-+-+-+-+-+-+-+-+
+3|O|X|X|X|X|X|X|X|3
+ +-+-+-+-+-+-+-+-+
+4|O|X|X|X|X|X|X|X|4
+ +-+-+-+-+-+-+-+-+
+5|O|X|X|X|X|X|X|X|5
+ +-+-+-+-+-+-+-+-+
+6|O|X|X|X|X|X|X|X|6
+ +-+-+-+-+-+-+-+-+
+7|O|X|X|X|X|X|X|X|7
+ +-+-+-+-+-+-+-+-+
+  0 1 2 3 4 5 6 7 
+
+direction=(-1,-1)
+checkForPattern=O
+direction=(-1,0)
+checkForPattern=O
+direction=(-1,1)
+checkForPattern= 
+direction=(0,-1)
+checkForPattern=O
+direction=(0,0)
+checkForPattern= 
+direction=(0,1)
+checkForPattern= 
+direction=(1,-1)
+checkForPattern= 
+direction=(1,0)
+checkForPattern= 
+direction=(1,1)
+checkForPattern= 
+Trying to move to (4,4) move=false
+  0 1 2 3 4 5 6 7 
+ +-+-+-+-+-+-+-+-+
+0|O|O|O|O|O|O|O|O|0
+ +-+-+-+-+-+-+-+-+
+1|O|X|X|X|X|X|X|X|1
+ +-+-+-+-+-+-+-+-+
+2|O|X|X|X| |X|X|X|2
+ +-+-+-+-+-+-+-+-+
+3|O|X|X|X|X|X|X|X|3
+ +-+-+-+-+-+-+-+-+
+4|O|X|X|X| |X|X|X|4
+ +-+-+-+-+-+-+-+-+
+5|O|X|X|X|X|X|X|X|5
+ +-+-+-+-+-+-+-+-+
+6|O|X|X|X|X|X|X|X|6
+ +-+-+-+-+-+-+-+-+
+7|O|X|X|X|X|X|X|X|7
+ +-+-+-+-+-+-+-+-+
+  0 1 2 3 4 5 6 7 
+
+direction=(-1,-1)
+hasMove at (4,4) in above direction =O
+direction=(-1,0)
+hasMove at (4,4) in above direction = 
+direction=(-1,1)
+hasMove at (4,4) in above direction = 
+direction=(0,-1)
+hasMove at (4,4) in above direction =O
+direction=(0,0)
+hasMove at (4,4) in above direction = 
+direction=(0,1)
+hasMove at (4,4) in above direction = 
+direction=(1,-1)
+hasMove at (4,4) in above direction = 
+direction=(1,0)
+hasMove at (4,4) in above direction = 
+direction=(1,1)
+hasMove at (4,4) in above direction = 
+who has a move=O
+Trying to move to (4,4) move=true
+  0 1 2 3 4 5 6 7 
+ +-+-+-+-+-+-+-+-+
+0|O|O|O|O|O|O|O|O|0
+ +-+-+-+-+-+-+-+-+
+1|O|O|X|X|X|X|X|X|1
+ +-+-+-+-+-+-+-+-+
+2|O|X|O|X| |X|X|X|2
+ +-+-+-+-+-+-+-+-+
+3|O|X|X|O|X|X|X|X|3
+ +-+-+-+-+-+-+-+-+
+4|O|O|O|O|O|X|X|X|4
+ +-+-+-+-+-+-+-+-+
+5|O|X|X|X|X|X|X|X|5
+ +-+-+-+-+-+-+-+-+
+6|O|X|X|X|X|X|X|X|6
+ +-+-+-+-+-+-+-+-+
+7|O|X|X|X|X|X|X|X|7
+ +-+-+-+-+-+-+-+-+
+  0 1 2 3 4 5 6 7 
+
+Testing flip method: before
+  0 1 2 3 4 5 6 7 
+ +-+-+-+-+-+-+-+-+
+0|O|O|O|O|O|O|O| |0
+ +-+-+-+-+-+-+-+-+
+1| |O|O|O|O|O|O|O|1
+ +-+-+-+-+-+-+-+-+
+2| | |O|O|O|O|O|X|2
+ +-+-+-+-+-+-+-+-+
+3| | | |O|O|O|O|X|3
+ +-+-+-+-+-+-+-+-+
+4| | | | |X|O|O|X|4
+ +-+-+-+-+-+-+-+-+
+5| | | | | |O|O|X|5
+ +-+-+-+-+-+-+-+-+
+6| | | | | | |O|X|6
+ +-+-+-+-+-+-+-+-+
+7| | | | | | | |X|7
+ +-+-+-+-+-+-+-+-+
+  0 1 2 3 4 5 6 7 
+
+Testing flip method: flipping
+flip(0,4,0,1, P1)=-1
+flip(1,4,0,1, P1)=-1
+flip(2,4,0,1, P1)=3
+flip(3,4,0,1, P1)=3
+flip(4,4,0,1, P1)=0
+flip(5,4,0,1, P1)=-1
+flip(6,4,0,1, P1)=-1
+flip(7,4,0,1, P1)=-1
+Testing flip method: after
+  0 1 2 3 4 5 6 7 
+ +-+-+-+-+-+-+-+-+
+0|O|O|O|O|O|O|O| |0
+ +-+-+-+-+-+-+-+-+
+1| |O|O|O|O|O|O|O|1
+ +-+-+-+-+-+-+-+-+
+2| | |O|O|X|X|X|X|2
+ +-+-+-+-+-+-+-+-+
+3| | | |O|X|X|X|X|3
+ +-+-+-+-+-+-+-+-+
+4| | | | |X|O|O|X|4
+ +-+-+-+-+-+-+-+-+
+5| | | | | |O|O|X|5
+ +-+-+-+-+-+-+-+-+
+6| | | | | | |O|X|6
+ +-+-+-+-+-+-+-+-+
+7| | | | | | | |X|7
+ +-+-+-+-+-+-+-+-+
+  0 1 2 3 4 5 6 7 
+
+Testing checkForPattern:
+checkForPattern(0,0,0,1)= 
+checkForPattern(1,1,0,1)= 
+checkForPattern(2,2,0,1)=X
+checkForPattern(3,3,0,1)=X
+checkForPattern(4,4,0,1)=O
+checkForPattern(5,5,0,1)=X
+checkForPattern(6,6,0,1)=X
+checkForPattern(7,7,0,1)= 
+checkForPattern(0,-1,0,1)= 
+checkForPattern(1,0,0,1)= 
+checkForPattern(2,1,0,1)= 
+checkForPattern(3,2,0,1)= 
+checkForPattern(4,3,0,1)= 
+checkForPattern(5,4,0,1)= 
+checkForPattern(6,5,0,1)= 
+checkForPattern(7,6,0,1)= 
+Testing hasMove:
+hasMove(0,0,0,1)= 
+hasMove(1,1,0,1)= 
+hasMove(2,2,0,1)= 
+hasMove(3,3,0,1)= 
+hasMove(4,4,0,1)= 
+hasMove(5,5,0,1)= 
+hasMove(6,6,0,1)= 
+hasMove(7,7,0,1)= 
+hasMove(0,-1,0,1)= 
+hasMove(1,0,0,1)= 
+hasMove(2,1,0,1)=X
+hasMove(3,2,0,1)=X
+hasMove(4,3,0,1)=O
+hasMove(5,4,0,1)=X
+hasMove(6,5,0,1)=X
+hasMove(7,6,0,1)= 
