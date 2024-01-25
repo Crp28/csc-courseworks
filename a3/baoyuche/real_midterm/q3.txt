@@ -1,0 +1,42 @@
+MIDTERM TEST QUESTION 3
+Short Answer
+
+5 marks
+
+(A) 2 marks
+Declare an array x with five elements, where each element is a
+pointer to a function that takes a pointer to char and
+returns a pointer to pointer to int.
+Don't use struct or typedef.
+
+TODO declaration
+int** (*x[5])(char*);
+
+(B) 3 marks
+Here is a makefile:
+
+---makefile starts on next line---
+junk: stuff
+	echo first
+
+stuff:
+	echo second > stuff
+---makefile ends on the line above this---
+
+Suppose that the current directory contains only this makefile.
+
+The first time we run 'make', file 'stuff' is created.
+Carefully explain the steps that lead to the creation of 'stuff'.
+
+TODO your explanation
+When we run 'make', since no argument is given make evaluates the first rule.
+Because the dependency file "stuff" is not present for target "junk", make goes to the rule that has "stuff" as target. 
+Since "stuff" does not exist, its recipe is run. The output of echo is redirected to file 'stuff', and since it is not present, the file stuff is created in current directory. 
+
+Every time we run 'make', whether it's the first time or not, 'first' is output.
+Explain why 'first' is always output like this.
+
+TODO your explanation
+Since "echo first" does not create a file named "junk", this rule is a phony target and is executed every time we make target junk.
+Because running 'make' with no arguments automatically evaluate the first rule, junk is evaluated and its recipe 'echo first' is always run after makefile checks whether the file "stuff" exist.
+Therefore first is outputted every time make is called.
